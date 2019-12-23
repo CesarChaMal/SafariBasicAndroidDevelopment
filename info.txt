@@ -1,0 +1,36 @@
+cd D:\Android\platform-tools
+
+adb tcpip 5555
+
+After this command is issued, your computer will not be able to listen to devices that are connected via USB.
+Disconnect the USB cable connecting your device to your computer.
+Configure ADB so that it will connect to your Android device on the port that was specified in step 1 above:
+
+adb connect 192.168.0.100:5555
+
+Once this command finished the Android device is connected to the computer via WiFi.
+When you're done debugging via WiFi, it is possible reset ADB back to USB mode with the following command:
+
+adb usb
+
+It is possible to ask ADB to list the devices that are connected to the computer. Regardless of how the devices are connected, you can issue the following command at the command prompt to see what is connected:
+
+adb devices
+
+Copy files to the device
+
+adb push "C:\Users\Cesar Chavez\Desktop\mydocs\cesar.jpg" "/mnt/sdcard/Download"
+
+Copy files to the device
+
+adb pull "/mnt/sdcard/Download/Passport.jpg" "C:\Users\Cesar Chavez\Desktop\mydocs\Passport.jpg" 
+adb pull "/mnt/sdcard/Download/Visa.jpg" "C:\Users\Cesar Chavez\Desktop\mydocs\Visa.jpg" 
+
+Open shell on device
+
+adb shell
+ls -ltra
+pwd
+
+https://docs.google.com/document/d/1QOz2KLcGnEhL7csLWoyxdKjz9K6N184vvv8dAa2EULk/edit
+	

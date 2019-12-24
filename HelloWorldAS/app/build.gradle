@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "com.nfjs.helloworldas"
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions('attitude')
+
+    productFlavors {
+        friendly {
+            dimension 'attitude'
+            minSdkVersion 17
+            applicationId 'com.nfjs.helloworldas'
+            targetSdkVersion 27
+            versionCode 1
+            versionName '1.0'
+        }
+        arrogant {
+            dimension 'attitude'
+            minSdkVersion 17
+            applicationId 'com.nfjs.helloworldas'
+            targetSdkVersion 27
+            versionCode 1
+            versionName '1.0'
+        }
+        obsequious {
+            dimension 'attitude'
+            minSdkVersion 17
+            applicationId 'com.nfjs.helloworldas'
+            targetSdkVersion 27
+            versionCode 1
+            versionName '1.0'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+}
